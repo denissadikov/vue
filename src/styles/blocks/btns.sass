@@ -1,0 +1,104 @@
+@import "../mixins/mixins"
+@import "../vars/variables"
+
+.btn
+  cursor: pointer
+  border: 2px solid transparent
+  text-align: center
+  display: inline-flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+  font-weight: bold
+  color: $color-white
+  background: $color-blue
+  font-size: 18px
+  line-height: 1.166666667
+  text-decoration: none
+  padding: 11px 16px
+  border-radius: 5px
+
+  +media($land, $scaling)
+    font-size: size(18, $size-land)
+    padding: size(11, $size-land) size(16, $size-land)
+    border-radius: size(6, $size-land)
+
+  +media($port, ">=tablet")
+    font-size: size(18, $size-port-tablet)
+    padding: size(11, $size-port-tablet) size(16, $size-port-tablet)
+    border-radius: size(6, $size-port-tablet)
+
+  +media($port, "<tablet")
+    font-size: size(18, $size-port)
+    padding: size(11, $size-port) size(16, $size-port)
+    border-radius: size(6, $size-port)
+
+  &:hover
+    text-decoration: none
+    opacity: 0.85
+
+  &.-border
+    border-color: $color-blue
+    background: $color-white
+    color: $color-blue
+
+  &.-active
+    pointer-events: none
+
+  &.-red
+    background: $color-red
+
+  &.-white
+    background: $color-white
+    color: $color-blue
+
+  &.-grey
+    background: #C7C8CA
+    color: #525C65
+
+    &.-border
+      border-color: #C7C8CA
+      background: transparent
+      color: #525C65
+
+  &.-mdl
+    font-size: 14px
+    line-height: 1.142857143
+    padding: 10px 16px
+    font-weight: 500
+
+    +media($land, $scaling)
+      font-size: size(14, $size-land)
+      padding: size(8, $size-land) size(16, $size-land)
+
+    +media($port, ">=tablet")
+      font-size: size(14, $size-port-tablet)
+      padding: size(8, $size-port-tablet) size(16, $size-port-tablet)
+
+    +media($port, "<tablet")
+      font-size: size(14, $size-port)
+      padding: size(8, $size-port) size(16, $size-port)
+
+  &.-min
+    font-weight: 500
+    font-size: 10px
+    line-height: 1
+    padding: 4px 10px
+    border-width: 1px
+
+    +media($land, $scaling)
+      font-size: size(14, $size-land)
+      padding: size(4, $size-land) size(10, $size-land)
+
+    +media($port, ">=tablet")
+      font-size: size(14, $size-port-tablet)
+      padding: size(4, $size-port-tablet) size(10, $size-port-tablet)
+
+    +media($port, "<tablet")
+      font-size: size(14, $size-port)
+      padding: size(4, $size-port) size(10, $size-port)
+
+  .btn-x
+    margin-left: 8px
+    font-size: 0.6em
+    color: #999999

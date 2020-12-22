@@ -1,0 +1,156 @@
+@import "../mixins/mixins"
+@import "../vars/variables"
+
+.mx-datepicker
+  &.w-100
+    width: 100%
+
+  svg
+    fill: $color-blue
+    width: 1em
+    height: 1em
+
+.date-picker
+  .mx-calendar-content .cell.active
+    background-color: $color-grey-light
+    color: $color-base
+
+  .mx-icon-left, .mx-icon-right
+    transform: scale(1.5)
+    display: inline-flex
+    margin-left: 7px
+
+    &::before
+      border-color: $color-blue
+
+  .mx-icon-right
+    margin-right: 7px
+    margin-left: 0
+
+  .mx-table td
+    border-radius: 4px
+
+  .mx-calendar-header-label
+    .mx-btn
+      font-size: 16px
+
+  .mx-btn
+    color: $color-base
+
+  .mx-btn-icon-double-left, .mx-btn-icon-double-right
+    display: none
+
+  &.mx-datepicker-main
+    font-family: $family-base
+    font-size: 12px
+    border: 0
+    color: $color-base
+
+  &.mx-datepicker-popup
+    background: $color-white
+    box-shadow: 0px 2px 6px rgba(167, 175, 206, 0.7)
+    border-radius: 5px
+
+.mx-datepicker-popup
+  border-radius: $radius-container
+
+.inner
+  background: $color-white
+  box-shadow: $shadow-container
+  border-radius: $radius-container
+  padding: 25px
+
+.header-phone
+  display: inline-flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  align-items: center
+  color: $color-red
+  font-size: 18px
+  line-height: 1
+  margin-left: 32px
+  font-style: italic
+
+  +media($land, $scaling)
+    font-size: size(18, $size-land)
+    margin-left: size(32, $size-land)
+
+  +media($port, ">=tablet")
+    font-size: size(18, $size-port-tablet)
+    margin-left: size(32, $size-port-tablet)
+
+  +media($port, "<tablet")
+    font-size: size(18, $size-port)
+    margin-left: size(32, $size-port)
+
+  .icon
+    margin-right: 11px
+
+    +media($land, $scaling)
+      margin-right: size(11, $size-land)
+
+    +media($port, ">=tablet")
+      margin-right: size(11, $size-port-tablet)
+
+    +media($port, "<tablet")
+      margin-right: size(11, $size-port)
+
+.user-counters
+  padding: 26px 0
+
+  .user-counters-num
+    text-align: right
+    font-weight: 500
+    font-size: 12px
+    width: 100px
+
+  .user-counters-date
+    font-style: italic
+    font-size: 8px
+    width: 100px
+    text-align: center
+
+  .user-counters-item-name
+    flex: 1
+
+    b
+      display: block
+      margin-bottom: 2px
+      font-weight: 500
+      font-size: 12px
+
+  .user-counters-item-icon
+    min-width: 28px
+    color: $color-blue
+    font-size: 17px
+    line-height: 1
+
+  .user-counters-item
+    background: #F1F2F2
+    padding: 6px 25px
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: center
+    color: #525C65
+    font-size: 9px
+
+    &:nth-child(2n)
+      background-color: $color-white
+
+  .user-counters-list
+    margin-bottom: 32px
+
+  .user-counters-title
+    color: #525C65
+    font-size: 18px
+    font-weight: 500
+    text-align: center
+    margin-bottom: 12px
+
+  .user-counters-icon
+    color: $color-blue
+    text-align: center
+    margin-bottom: 22px
+    font-size: 40px
+    display: block

@@ -1,0 +1,990 @@
+@import "../mixins/mixins"
+@import "../vars/variables"
+
+.tags
+	padding: 0 32px
+	padding-top: 6px
+	display: flex
+	&-item
+		height: 34px
+		padding: 0 8px
+		border-bottom: 2px solid transparent
+		transition: 0.3s
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		font-size: 12px
+		line-height: 16px
+		color: #9cafb9
+		text-decoration: none
+		border-radius: 5px 5px 0px 0px
+		b,strong
+			display: none
+			margin-right: 8px
+			font-weight: 500
+			font-size: 12px
+			line-height: 16px
+			color: #00b2cc
+		&:hover
+			border-color: #00B2CC
+			color: #000a12
+			background-color: #f3f9f9
+		&.router-link-exact-active
+			border-color: #00B2CC
+			color: #000a12
+			background-color: #f3f9f9
+			b,strong
+				display: inline
+
+.dates
+	display: flex
+	&-item
+		padding: 8px
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		text-decoration: none
+		transition: .3s
+		margin-right: 23px
+		font-size: 12px
+		line-height: 16px
+		border-radius: 5px
+		color: #9cafb9
+		&:last-child
+			margin-right: 0
+		&.router-link-exact-active, &:hover
+			color: #00b2cc
+			background-color: #f3f9f9
+
+.pagination
+	display: flex
+	padding: 16px
+	&-item
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		text-decoration: none
+		transition: .3s
+		border-radius: 5px
+		margin-right: 4px
+		height: 32px
+		padding: 0 16px
+		font-size: 16px
+		font-weight: 500
+		color: #000a12
+		background-color: #f3f9f9
+		&:last-child
+			margin-right: 0
+		img
+			margin-left: 12px
+		&.router-link-exact-active, &:hover
+			background-color: #9fd3d9
+
+.show-message
+	position: relative
+	span
+		width: 264px
+		height: 66px
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		background: #FFFFFF
+		box-shadow: 0px 0px 16px rgba(167, 175, 206, 0.5)
+		border-radius: 5px
+		position: absolute
+		z-index: 9
+		right: -20px
+		opacity: 0
+		visibility: hidden
+		font-size: 14px
+		line-height: 20px
+		color: #000a12
+		top: calc(100%)
+		transition: .3s
+		&::after
+			content: ''
+			position: absolute
+			right: 35px
+			top: -14px
+			border: 7px solid transparent
+			border-bottom: 7px solid #fff
+	&:hover
+		span
+			top: calc(100% + 15px)
+			opacity: 1
+			visibility: visible
+	&-left
+		span
+			left: -20px
+			right: auto
+			&::after
+				right: auto
+				left: 35px
+	&-center
+		span
+			left: 50%
+			right: auto
+			transform: translate(-50%, 0)
+			&::after
+				left: 50%
+				transform: translate(-50%, 0)
+				right: auto
+
+.journal
+	&-callback
+		margin-right: 16px
+		width: 40px
+		height: 40px
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		text-decoration: none
+		font-size: 16px
+		color: #ffffff
+		transition: .3s
+		border-radius: 50%
+		background-color: #ff7400
+		&:hover
+			opacity: 0.8
+	&-exit
+		position: absolute
+		right: 0
+		top: 0
+		font-size: 0
+	&-list
+		margin-left: 68px
+		flex: 0 387px
+		min-width: 387px
+		display: flex
+		flex-wrap: wrap
+		&-icon
+			margin-right: 8px
+		&-item
+			display: flex
+			margin-bottom: 8px
+			flex: 0 181px
+		&-num
+			font-size: 14px
+			line-height: 16px
+			font-weight: 500
+			color: #000a12
+			margin-right: 8px
+		&-call
+			display: flex
+		&-title
+			font-size: 14px
+			line-height: 16px
+			color: #000a12
+		&-name
+			font-size: 14px
+			line-height: 16px
+			font-weight: 300
+	&-wrapper
+		flex: 1
+		background-color: #ffffff
+		border-radius: 5px
+	&-top
+		display: flex
+		align-items: center
+		padding: 8px 32px
+	&-new
+		margin-left: auto
+		a
+			width: 48px
+			height: 48px
+			border-radius: 50%
+			border: 2px solid #EEF3F3
+			display: flex
+			align-items: center
+			justify-content: center
+			font-size: 0
+	&-content
+		max-height: 550px
+		overflow: auto
+		border-bottom: 2px solid #f3f9f9
+		border-top: 2px solid #f3f9f9
+		padding-right: 6px
+		margin-right: 6px
+	&-item
+		position: relative
+		padding-left: 53px
+		padding-right: 11px
+		display: flex
+		padding-top: 15px
+		padding-bottom: 11px
+		border-top: 2px solid #f3f9f9
+		border-right: 2px solid #f3f9f9
+		min-height: 110px
+		&:first-child
+			border-top: 0
+	&-status
+		position: absolute
+		left: -42px
+		top: 42px
+		width: 110px
+		transform: rotate(-90deg)
+		border-top: 2px solid #18BDB3
+		background-color: #f3f9f9
+		color: #18bdb3
+		font-size: 12px
+		line-height: 24px
+		font-weight: 500
+		display: flex
+		align-items: center
+		justify-content: center
+		&.-yellow
+			border-color: #FFA541
+			background-color: #fff6ec
+			color: #ffa541
+		&.green
+			color: #ffffff
+			border-color: #00B2CC
+			background-color: #18bdb3
+	&-phone
+		margin-right: auto
+		&-tel
+			display: flex
+			align-items: center
+			font-size: 14px
+			line-height: 16px
+			color: #000a12
+			font-weight: bold
+			margin-bottom: 2px
+			img
+				margin-left: 10px
+		&-text
+			font-size: 12px
+			line-height: 16px
+			color: #000a12
+	&-main
+		display: flex
+		flex-direction: column
+		flex: 0 307px
+		min-width: 307px
+		margin-right: 17px
+		font-size: 14px
+		line-height: 24px
+		color: #000a12
+	&-ex
+		display: flex
+		align-items: center
+		margin-top: auto
+		fill: #00b2cc
+		text-decoration: none
+		transition: .3s
+		p
+			margin: 0
+			font-size: 12px
+			line-height: 16px
+			color: #000a12
+		&-info
+			margin-left: 7px
+			display: flex
+			flex-direction: column
+			span
+				font-size: 12px
+				line-height: 16px
+				font-weight: 300
+				color: #000a12
+		&.show-message
+			display: inline
+			width: 40px
+			fill: #9CAFB9
+			font-size: 0
+			line-height: 0
+			span
+				top: calc(100% + -15px)
+			&:hover
+				fill: #00b2cc
+				span
+					top: calc(100% + 5px)
+	&-text
+		flex: 0 256px
+		min-width: 256px
+		margin-left: auto
+		font-size: 12px
+		line-height: 16px
+		color: #000a12
+	&-balance
+		color: #718792
+		font-size: 14px
+		line-height: 24px
+	&-end
+		color: #00b2cc
+		font-size: 14px
+		line-height: 24px
+	&-info
+		display: flex
+		flex-wrap: wrap
+		&-right
+			margin-left: auto
+			text-align: right
+			margin-left: 13px
+			.journal-val
+				margin-right: -24px
+				margin-bottom: 0
+	&-id
+		display: inline-flex
+		align-items: center
+		background-color: #f3f9f9
+		border-radius: 10px
+		margin-bottom: 5px
+		margin-left: -10px
+		padding: 0 10px
+		font-size: 14px
+		line-height: 24px
+		font-weight: 500
+		color: #000a12
+		b
+			line-height: 20px
+			font-weight: bold
+			color: #00b2cc
+			margin: 0 6px
+			width: 16px
+			height: 16px
+			border-radius: 50%
+			background-color: #ffffff
+			display: flex
+			align-items: center
+			justify-content: center
+	&-val
+		font-size: 14px
+		line-height: 24px
+		color: #ff0000
+		flex: 1 100%
+		display: flex
+		align-items: center
+		img
+			margin-left: 8px
+	&-date
+		font-size: 12px
+		line-height: 16px
+		color: #000a12
+		flex: 1 100%
+	&-type
+		font-size: 12px
+		line-height: 16px
+		font-weight: 300
+		color: #000a12
+		flex: 1 100%
+	&-comment
+		display: flex
+		align-items: flex-end
+		fill: #9CAFB9
+		font-size: 14px
+		line-height: 18px
+		color: #000a12
+		font-style: italic
+		transition: .3s
+		svg
+			margin-right: 6px
+		&:hover
+			fill: #00B2CC
+
+.scroll-style
+	&::-webkit-scrollbar
+		width: 8px
+	&::-webkit-scrollbar-track
+		background: rgba(#F3F9F9, .5)
+	&::-webkit-scrollbar-thumb
+		background: rgba(#9FD3D9, .9)
+		border-radius: 5px
+
+.call
+	&-left
+		flex: 0 647px
+		margin-right: 15px
+	&-top
+		display: flex
+		flex-wrap: wrap
+		background-color: #ffffff
+		border-radius: 5px
+		margin-bottom: 15px
+		padding-top: 17px
+		padding-left: 32px
+		padding-right: 32px
+		padding-bottom: 4px
+	&-about
+		flex: 1
+		font-size: 18px
+		line-height: 28px
+		color: #212529
+	&-name
+		font-weight: bold
+	&-status
+		padding-top: 8px
+		margin-bottom: 28px
+		&-main
+			margin-bottom: 8px
+		& > div
+			display: flex
+			align-items: center
+		p
+			margin: 0
+			flex: 0 90px
+			padding-right: 10px
+		span
+			display: block
+			font-size: 14px
+			line-height: 24px
+			color: #000a12
+			width: 144px
+			background-color: #eef3f3
+			border-radius: 5px
+			text-align: center
+			&.-in-work
+				background-color: #18bdb3
+				color: #ffffff
+	&-info
+		flex: 1 100%
+		&-name
+			flex: 0 222px
+			padding-right: 15px
+			font-size: 14px
+			line-height: 1.5
+			color: #000a12
+		&-val
+			flex: 0 158px
+			font-size: 12px
+			line-height: 16px
+			font-style: italic
+			color: #4f5b62
+		&-options
+			margin-left: 32px
+			display: flex
+			align-items: center
+		&-option
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			width: 32px
+			height: 32px
+			margin-right: 24px
+			text-decoration: none
+			font-size: 20px
+			color: #9cafb9
+			transition: .3s
+			&:hover
+				color: #00b2cc
+			&:last-child
+				margin-right: 0
+	&-row
+		display: flex
+		align-items: center
+		min-height: 48px
+		border-bottom: 1px solid #f3f9f9
+		&:last-child
+			border-bottom: 0
+	&-bottom
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		border-radius: 5px
+		background: #FFFFFF
+		&-title
+			padding-left: 19px
+			margin-right: 54px
+			font-size: 18px
+			line-height: 32px
+			font-weight: 500
+			color: #4f5b62
+		&-val
+			font-size: 28px
+			line-height: 32px
+			font-weight: 500
+			color: #ff0000
+			margin-right: auto
+		&-link
+			width: 48px
+			height: 48px
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			text-decoration: none
+			color: #00b2cc
+			font-size: 24px
+			margin-right: 15px
+			margin-top: 22px
+			margin-bottom: 26px
+		&-list
+			flex: 1 100%
+		&-item
+			border-top: 2px solid #EEF3F3
+			padding: 16px
+			display: flex
+			justify-content: space-between
+			.journal-id
+				margin-left: 0
+			.journal-val
+				margin-bottom: 0
+	&-right
+		flex: 0 385px
+		background-color: #ffffff
+		border-radius: 5px
+		display: flex
+		flex-direction: column
+		&-top
+			padding: 0 24px
+			padding-top: 16px
+			display: flex
+			align-items: center
+		&-title
+			font-size: 18px
+			line-height: 32px
+			font-weight: 500
+			color: #4f5b62
+			margin-right: auto
+		&-options
+			display: flex
+			align-items: center
+		&-option
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			text-decoration: none
+			transition: .3s
+			width: 48px
+			height: 48px
+			margin-right: 8px
+			&:last-child
+				margin-right: 0
+		&-links
+			display: flex
+			padding: 0 24px
+			margin-top: auto
+			margin-bottom: 34px
+		&-link
+			background-color: #ff7400
+			border-radius: 5px
+			border: 0
+			cursor: pointer
+			height: 40px
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			text-decoration: none
+			transition: .3s
+			color: #ffffff
+			font-size: 16px
+			font-weight: bold
+			width: 160px
+			margin-right: 16px
+			&:last-child
+				margin-right: 0
+			.icon
+				margin-right: 12px
+			&:hover
+				opacity: 0.8
+			&.-hollow
+				border: 2px solid #ff7400
+				color: #ff7400
+				background: 0
+				transition: .3s
+				&:hover
+					background: #ff7400
+					color: #ffffff
+					opacity: 1
+	&-events
+		max-height: 400px
+		overflow: auto
+		border-bottom: 2px solid #f3f9f9
+		border-top: 2px solid #f3f9f9
+		padding-left: 24px
+		padding-right: 6px
+		margin-right: 6px
+		&-title
+			padding-top: 14px
+			font-size: 18px
+			line-height: 32px
+			font-weight: 500
+			color: #4f5b62
+			padding-bottom: 24px
+			border-right: 2px solid #f3f9f9
+		&-item
+			border-top: 2px solid #f3f9f9
+			border-right: 2px solid #f3f9f9
+			padding-top: 10px
+			padding-right: 5px
+			padding-bottom: 23px
+			&:nth-child(2)
+				border-top: 0
+		&-date
+			font-size: 14px
+			line-height: 16px
+			font-weight: 300
+			color: #000a12
+			margin-bottom: 15px
+		&-text
+			font-size: 14px
+			line-height: 16px
+			color: #000a12
+	&-tabs
+		margin-top: 16px
+		display: flex
+		flex: 1 100%
+		border-bottom: 2px solid #eef3f3
+	&-tab
+		flex: 0 20%
+		border: 0
+		height: 40px
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		text-decoration: none
+		background: 0
+		color: #9cafb9
+		font-size: 14px
+		line-height: 16px
+		font-weight: 500
+		position: relative
+		z-index: 1
+		cursor: pointer
+		&::after
+			position: absolute
+			z-index: -1
+			left: 0
+			top: 0
+			content: ''
+			width: 100%
+			height: 100%
+			border-bottom: 40px solid #ffffff
+			border-left: 10px solid transparent
+			border-right: 10px solid transparent
+			opacity: 0
+			transition: .3s
+		&.active, &:hover
+			color: #00b2cc
+			&::after
+				opacity: 1
+	&-contents
+		flex: 1 100%
+
+
+.home
+	&-row
+		&-top
+			display: flex
+			align-items: center
+			justify-content: space-between
+			font-size: 14px
+			line-height: 24px
+			p
+				margin: 0
+				&:first-child
+					color: #9cafb9
+				&:last-child
+					font-weight: 500
+					color: #000a12
+	&-status
+		display: flex
+		flex-direction: column
+		background-color: #ffffff
+		border-radius: 5px
+		flex: 0 507px
+		margin-right: 16px
+		&-list
+			padding: 0 16px
+			padding-top: 24px
+			padding-bottom: 32px
+			display: flex
+			flex-wrap: wrap
+			margin-bottom: -20px
+			justify-content: space-between
+			border-top: 2px solid #EEF3F3
+		&-row
+			margin-bottom: 20px
+			flex: 0 230px
+		&-line
+			width: 100%
+			height: 8px
+			background-color: #eef3f3
+			border-radius: 30px
+			span
+				display: inline-block
+				height: 100%
+				padding: 0 4px
+				border-radius: 30px
+				vertical-align: top
+		&-top
+			display: flex
+			flex-wrap: wrap
+			padding: 16px
+			padding-bottom: 5px
+			margin-bottom: auto
+		&-item
+			display: flex
+			align-items: center
+			margin-right: 36px
+			&:first-child
+				margin-right: 88px
+			&:last-child
+				margin-right: 0
+		&-check
+			width: 40px
+			height: 40px
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			text-decoration: none
+			transition: .3s
+			border-radius: 5px
+			background-color: #ff7400
+			&:hover
+				opacity: 0.8
+		&-title
+			font-size: 28px
+			line-height: 40px
+			font-weight: 500
+			color: #000a12
+			margin-right: 8px
+		&-text
+			font-size: 12px
+			line-height: 14px
+			font-weight: 300
+			color: #000a12
+		&-small
+			flex: 0 268px
+			margin-right: 0
+			.home-status-item
+				margin-right: 0
+		&-bottom
+			display: flex
+			justify-content: space-between
+			align-items: center
+			margin-top: 15px
+			flex: 1 100%
+			&-item
+				display: flex
+				align-items: center
+				font-size: 14px
+				line-height: 14px
+				font-weight: 300
+				color: #000a12
+				p
+					margin: 0
+					&:first-child
+						margin-right: 8px
+					&:last-child
+						line-height: 26px
+						font-weight: 500
+	&-wrapper
+		display: flex
+		flex-wrap: wrap
+		flex: 1 100%
+	&-sum
+		background-color: #ffffff
+		border-radius: 5px
+		flex: 1 100%
+		padding-bottom: 34px
+		margin-bottom: 17px
+		margin-top: 16px
+	&-top
+		padding-top: 16px
+		padding-left: 32px
+		padding-right: 32px
+		display: flex
+		justify-content: space-between
+		margin-bottom: 25px
+		align-items: center
+	&-title
+		font-size: 18px
+		line-height: 32px
+		font-weight: 500
+		color: #4f5b62
+	&-graph
+		position: relative
+		z-index: 1
+		padding-top: 25px
+		padding-left: 39px
+		padding-right: 59px
+		&-title
+			margin-right: 24px
+			flex: 0 113px
+			min-width: 113px
+			text-align: right
+			font-size: 14px
+			line-height: 24px
+			color: #9cafb9
+		&-val
+			display: flex
+			align-items: center
+			font-size: 14px
+			line-height: 20px
+			color: #18bdb3
+			width: 100%
+			b,strong
+				font-family: inherit
+				font-weight: normal
+				margin-left: 7px
+			span
+				height: 24px
+				justify-content: center
+				text-align: center
+				display: flex
+				text-align: center
+				align-items: center
+				background-color: #e1fcfa
+				border: 1px solid #18bdb3
+		&-list
+			display: flex
+			flex: 1 100%
+			font-size: 12px
+			line-height: 24px
+			color: #9cafb9
+			p
+				margin: 0
+				flex: 1
+				background-color: #ffffff
+				&::after
+					position: absolute
+					z-index: -1
+					top: 0
+					margin-left: -3.5px
+					content: ''
+					width: 1px
+					height: 100%
+					background-color: #f3f9f9
+	&-row
+		display: flex
+		align-items: center
+		margin-bottom: 8px
+		&:last-child
+			margin-bottom: 0
+	&-bottom
+		display: flex
+		align-items: center
+	&-debtor
+		background-color: #ffffff
+		border-radius: 5px
+		flex: 1 100%
+		&-list
+			max-height: 496px
+			overflow: auto
+			padding-right: 6px
+			margin-right: 6px
+			border-bottom: 2px solid #f3f9f9
+			border-top: 2px solid #f3f9f9
+		&-dates
+			padding: 0 32px
+			margin-bottom: 12px
+		&-top
+			padding: 16px 32px
+		&-form
+			display: flex
+			align-items: center
+	&-input
+		flex: 1
+		height: 40px
+		border-radius: 5px
+		background: #f3f9f9
+		border: 0
+		margin-right: 0
+		padding: 0 16px
+		font-size: 16px
+		line-height: 40px
+		max-width: 616px
+		color: #9cafb9
+	&-btn
+		width: 40px
+		height: 40px
+		position: relative
+		margin-left: -40px
+		margin-right: 16px
+		cursor: pointer
+		border: 0
+		background: 0
+		padding: 0
+	&-form
+		&-info
+			margin-right: auto
+			color: #000a12
+		&-title
+			font-size: 18px
+			line-height: 24px
+			font-weight: 500
+			margin-bottom: 4px
+		&-text
+			font-size: 12px
+			font-weight: 300
+			line-height: 8px
+	&-tags
+		&-list
+			border-top: 2px solid #f3f9f9
+			padding: 16px 32px
+			display: flex
+			align-items: center
+	&-tag
+		height: 32px
+		padding: 8px
+		border-bottom: 2px solid transparent
+		transition: 0.3s
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		font-size: 12px
+		line-height: 16px
+		color: #000A12
+		text-decoration: none
+		b,strong
+			margin-right: 8px
+			font-weight: 500
+			font-size: 12px
+			line-height: 16px
+			color: #00b2cc
+		img
+			margin-left: 4px
+	&-left
+		flex: 0 241px
+		margin-right: 16px
+	&-total
+		margin-bottom: 16px
+		background-color: #ffffff
+		border-radius: 5px
+		padding-top: 16px
+		padding-left: 16px
+		padding-right: 16px
+		padding-bottom: 14px
+		&-val
+			margin-top: 8px
+			font-size: 24px
+			line-height: 48px
+			font-weight: 500
+			color: #00b2cc
+			margin-bottom: 15px
+		&-info
+			text-align: right
+		&-title
+			font-size: 16px
+			line-height: 1
+			font-weight: 500
+			margin-bottom: 3px
+		&-text
+			font-size: 14px
+			line-height: 16px
+			color: #9cafb9
+	&-all
+		background-color: #ffffff
+		border-radius: 5px
+		padding-top: 16px
+		padding-left: 16px
+		padding-right: 16px
+		padding-bottom: 14px
+		&-val
+			margin-top: 8px
+			font-size: 24px
+			line-height: 48px
+			font-weight: 500
+			color: #FF0000
+			margin-bottom: 8px

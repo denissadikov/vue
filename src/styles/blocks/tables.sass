@@ -1,0 +1,311 @@
+@import "../mixins/mixins"
+@import "../vars/variables"
+
+.t-style
+  background: $color-white
+  margin-bottom: 20px
+  border-radius:  $radius-container
+  font-size: 14px
+  color: $color-grey-text
+
+  .t-style-item
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: center
+    width: 23%
+
+    i
+      font-size: 12px
+      text-align: right
+
+  .t-style-user
+    font-weight: 500
+    margin-left: 15px
+
+  .t-style-label
+    color: $color-red
+    font-weight: 500
+    display: inline-flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+    margin-right: 15px
+
+    .icon
+      margin-left: 9px
+      font-size: 1.3em
+      line-height: 1
+
+  .t-style-date
+    margin-right: 20px
+    font-weight: 500
+
+  .t-style-title
+    color: $color-blue
+    font-weight: 500
+    font-size: 18px
+    margin-right: 20px
+
+  .t-style-heading-left, .t-style-heading-right
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: baseline
+
+  .t-style-body
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: baseline
+    padding: 15px 25px
+
+    &:nth-child(2n)
+      background: $color-grey-medium
+
+  .t-style-heading
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: baseline
+    padding: 15px 25px
+
+    .btn
+      margin-left: 10px
+
+.t-style1
+  width: 100%
+  background: $color-white
+  border: 1px solid #D8D8D8
+  border-radius: 5px
+  border-spacing: 0
+  margin-bottom: 20px
+  font-size: 12px
+
+  &:last-child
+    margin-bottom: 0
+
+  //
+
+  .t-style1-edit
+    cursor: pointer
+    font-size: 2em
+    color: $color-blue
+    text-decoration: none
+
+  .t-style1-user
+    b
+      font-weight: 500
+      display: block
+
+    i
+      font-size: 10px
+      color: $color-blue
+
+  .t-style1-rating
+    display: inline-flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+
+    .icon
+      cursor: pointer
+      margin-right: 3px
+      color: #A7AFCE
+
+      &.i_star-full
+        color: $color-blue
+
+      &:last-child
+        margin-right: 0
+
+  .t-style1-label
+    font-weight: 500
+    color: $color-white
+    text-align: center
+    background: $color-blue
+    border-radius: 5px
+    padding: 5px 7px
+    white-space: nowrap
+    display: inline-flex
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
+
+    &.-green
+      background: $color-green
+
+  .t-style1-time
+    display: inline-flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+
+    .icon
+      position: relative
+      top: -1px
+      color: $color-blue
+      margin-right: 5px
+
+  .t-style1-date
+    margin-bottom: 5px
+    background: rgba(0, 113, 185, .5)
+    border-radius: 5px
+    padding: 2px 10px
+    color: #525C65
+    display: inline-flex
+
+    &.-grey
+      background: $color-grey-dark
+      color: $color-white
+
+    &.-blue
+      background: $color-blue
+      color: $color-white
+
+    &.-red
+      background: $color-red
+      color: $color-white
+
+    &.-green
+      background: rgba(65, 188, 61, .2)
+
+  .t-style1-popover-wrapper
+    position: relative
+
+    &:hover
+      .t-style1-popover
+        opacity: 1
+        visibility: visible
+
+  .t-style1-popover
+    position: absolute
+    background: #FFFFFF
+    box-shadow: 0px 2px 6px rgba(167, 175, 206, 0.7)
+    border-radius: 5px
+    width: 337px
+    top: 5px
+    right: 5px
+    text-align: center
+    padding: 16px
+    z-index: 1
+    color: #525C65
+    opacity: 0
+    visibility: hidden
+    transition: all $anim-global ease-out
+
+    .t-style1-popover-head
+      color: $color-red
+      font-size: 14px
+      font-weight: 500
+      margin-bottom: 15px
+
+      span
+        font-size: 24px
+
+    p
+      margin-bottom: 15px
+      font-size: 14px
+      margin-top: 0
+
+  input.t-style1-input
+    width: 80px
+    background: #fff
+
+  .t-style1-icon-title
+    display: inline-flex
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
+    font-style: italic
+    font-size: 9px
+
+    .icon
+      font-size: 2.5em
+      margin-bottom: 5px
+
+  .t-style1-str-icon
+    display: inline-flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+
+    .icon
+      margin-left: 5px
+      position: relative
+      font-size: 1.3em
+      top: -1px
+      color: $color-red
+
+  .t-style1-pay-trigger
+    display: none
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+    cursor: pointer
+
+  tr
+    &:last-child
+      td
+        &:first-child
+          border-radius: 0 0 0 4px
+
+        &:last-child
+          border-radius: 0 0 4px 0
+
+    &:not(.-no-hover):hover
+      .t-style1-pay
+        display: none
+
+      .t-style1-pay-trigger
+        display: inline-flex
+        vertical-align: middle
+
+        .icon
+          font-size: 1.6em
+          margin-right: 10px
+
+      td
+        color: $color-blue
+
+        input.t-style1-input
+          border-color: $color-blue
+
+        .icon-svg-pdf
+          display: none
+
+          &:last-child
+            display: inline
+
+    &:nth-child(2n)
+      background: #F1F2F2
+
+  .icon-svg-pdf
+    width: 25px
+    height: 25px
+    cursor: pointer
+
+    &:last-child
+      display: none
+
+  th
+    font-weight: 500
+    color: $color-blue
+    padding: 10px
+    font-size: 10px
+    text-align: left
+
+    &.text-center
+      text-align: center
+
+  td
+    color: #525C65
+    padding: 10px
+    vertical-align: middle
+
+    &.text-right
+      text-align: right
+
+    b
+      font-weight: 500
+

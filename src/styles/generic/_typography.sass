@@ -1,0 +1,176 @@
+h1, .h1
+  font-weight: 500
+  font-size: 1.5em
+  margin: 1em 0
+
+  &:first-child
+    margin-top: 0
+
+h2, .h2
+  font-weight: 500
+  font-size: 1.5em
+  margin: 1em 0
+
+  &:first-child
+    margin-top: 0
+
+h3, .h3
+  font-weight: 500
+  font-size: 1.5em
+  margin: 1em 0
+
+  &:first-child
+    margin-top: 0
+
+h4, h5, h6, .h4, .h5, .h6
+  font-weight: 500
+  font-size: 1.2em
+  margin: 1em 0
+
+  &:first-child
+    margin-top: 0
+
+a
+  color: $link-color
+  text-decoration: underline
+
+a:visited
+
+a:hover
+  text-decoration: none
+
+a:active
+
+a:focus
+  outline: none
+
+img
+  vertical-align: middle
+  max-width: 100%
+
+.v-lazy-image
+  opacity: 0
+  transition: opacity $anim-global
+
+.v-lazy-image-loaded
+  opacity: 1
+
+textarea
+  overflow: auto
+
+input, textarea
+  +placeholder
+    color: $placeholder
+    opacity: 0.5
+
+input:focus, input:active, textarea:focus, textarea:active
+  outline: none
+
+  +placeholder
+    color: transparent !important
+
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active
+  outline: none
+
+/*stylized-switch*/
+.switch
+  position: relative
+  display: inline-flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+  height: 16px
+  width: 16px
+  min-width: 16px
+  vertical-align: middle
+  cursor: pointer
+  margin-right: 12px
+  border-radius: 4px
+  background: $color-white
+
+  &.-error
+    animation: bounce .5s .25s
+    background: rgba(222, 0, 33, 0.1)
+
+    i
+      border-color: transparent !important
+
+.switch input
+  vertical-align: middle
+  margin: 0
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+
+.switch input:not(:checked), .switch input:checked
+  opacity: 0
+  z-index: 1
+  cursor: pointer
+
+/*not checked radio*/
+.switch input[type=radio]:not(:checked) + i, .switch input[type=radio]:checked + i
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: $color-white
+  border-radius: 100%
+  border: 2px solid transparent
+
+/*not checked checkbox*/
+.switch input[type=checkbox]:not(:checked) + i, .switch input[type=checkbox]:checked + i
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  border: 1px solid #525C65
+  font-size: 12px
+  line-height: 1
+  color: transparent
+  border-radius: 4px
+  display: inline-flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+
+  &.-error
+    background-color: $color-red
+    border-color: $color-red
+
+/*checked radio*/
+.switch input[type=radio]:checked + i
+  background: $color-blue
+  box-shadow: 0px 0px 4px #C1C5CE
+  border-color: $color-white
+
+/*checked checkbox*/
+.switch input[type=checkbox]:checked + i
+  color: $color-white
+  background: $color-blue
+  border: 1px solid $color-blue
+
+/*end stylized-switch*/
+
+.no-webp
+  .on-webp
+    display: none
+
+.webp
+  .off-webp
+    display: none
+
+button
+  &:active, &:focus
+    outline: none
+
+*
+  -webkit-tap-highlight-color:  transparent
+
+

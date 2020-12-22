@@ -1,0 +1,175 @@
+@import "../mixins/mixins"
+@import "../vars/variables"
+
+.input-icon-wrapper
+  position: relative
+
+  .input-icon-error
+    color: $color-red
+    position: absolute
+    top: 100%
+    left: 0
+    margin-top: 5px
+    font-style: italic
+
+    +media($land, $scaling)
+      margin-top: size(5, $size-land)
+
+    +media($port, ">=tablet")
+      margin-top: size(5, $size-port-tablet)
+
+    +media($port, "<tablet")
+      margin-top: size(5, $size-port)
+
+  .icon
+    position: absolute
+    top: -3px
+    left: -1px
+    pointer-events: none
+    color: #999
+    font-size: 22px
+    line-height: 1
+
+    +media($land, $scaling)
+      top: size(-3, $size-land)
+      font-size: size(22, $size-land)
+
+    +media($port, ">=tablet")
+      top: size(-3, $size-port-tablet)
+      font-size: size(22, $size-port-tablet)
+
+    +media($port, "<tablet")
+      top: size(-3, $size-port)
+      font-size: size(22, $size-port)
+
+    &.-error
+      color: $color-red
+
+.input-icon
+  border: 0
+  background: transparent
+  border-bottom: 2px solid #999999
+  padding: 0 5px 13px 30px
+  width: 100%
+  color: #525C65
+  font-size: 14px
+  line-height: 1.15
+
+  +media($land, $scaling)
+    padding: 0 size(5, $size-land) size(13, $size-land) size(30, $size-land)
+    font-size: size(14, $size-land)
+
+  +media($port, ">=tablet")
+    padding: 0 size(5, $size-port-tablet) size(13, $size-port-tablet) size(30, $size-port-tablet)
+    font-size: size(14, $size-port-tablet)
+
+  +media($port, "<tablet")
+    padding: 0 size(5, $size-port) size(13, $size-port) size(30, $size-port)
+    font-size: size(14, $size-port)
+
+  &.-error
+    border-bottom-color: $color-red
+
+.input-checkbox
+  display: inline-flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  align-items: center
+  margin-right: 15px
+  user-select: none
+
+  .switch
+    align-self: flex-start
+    margin-right: 10px
+
+.input-text-error
+  color: $color-red
+  margin-top: 5px
+  font-size: 12px
+
+.input-text-item
+  margin-bottom: 10px
+
+.input-text-icon-wrapper
+  position: relative
+
+  &.-error
+    .input-text-icon
+      color: $color-red
+
+  .input-text-icon
+    color: $color-blue
+    font-size: 1.3em
+    position: absolute
+    top: 50%
+    left: 10px
+    transform: translateY(-50%)
+
+    &.-min
+      font-size: 1em
+
+    &.-mdl
+      left: 10px
+      font-size: 1.1em
+
+      + .input-text
+        padding-left: 30px
+
+    &.-right
+      left: auto
+      right: 10px
+
+      &.-mdl
+        right: 6px
+
+      + .input-text
+        padding-left: 4px
+        padding-right: 25px
+
+    + .input-text
+      padding-left: 35px
+
+.input-text
+  padding: 10px
+  border: 1px solid transparent
+  color: #525C65
+  width: 100%
+  font-family: $family-base
+  background-color: #F5F7FB
+  line-height: 1.15
+  border-radius:  $radius-container
+
+  +placeholder
+    color: rgba(167, 175, 206, 0.5)
+
+  &.-large
+    padding: 9px 23px
+    font-size: 18px
+
+  &.-mdl
+    padding: 8px
+    font-size: 16px
+
+  &.-min
+    padding: 4px
+    font-size: 10px
+
+  &.-white
+    background: $color-white
+
+  &.-border
+    border: 1px solid #D2D3D4
+
+  &.-error
+    animation: bounce .5s .25s
+    background: rgba(222, 0, 33, 0.1)
+
+  &:disabled
+    opacity: 0.85
+    cursor: not-allowed
+
+textarea.input-text
+  resize: none
+  height: 90px
+
+  +scrollbars(7px, $color-grey-light, 5px, $color-blue-light)

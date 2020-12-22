@@ -1,0 +1,68 @@
+@import "../mixins/mixins"
+@import "../vars/variables"
+
+html, body
+  font: $fz-base/$line-height-base $family-base
+  height: 100%
+  width: 100%
+  color: $color-base
+  background: $bg-color-base
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+*, *:before, *:after
+  box-sizing: border-box
+
+html
+  +rem-baseline
+
+#app
+  min-height: 100%
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: stretch
+  transition: opacity $anim-global*4 ease-out
+  overflow: hidden
+
+.content
+  flex: 1 1 auto
+  position: relative
+  padding-bottom: 40px
+
+  +media($land, $scaling)
+    padding-bottom: size(40, $size-land)
+
+  +media($port, ">=tablet")
+    padding-bottom: size(40, $size-port-tablet)
+
+  +media($port, "<tablet")
+    padding-bottom: size(40, $size-port)
+
+*::-ms-backdrop, .content
+  min-height: 80vh
+
+.container
+  max-width: 1200px
+  padding: 0 size(20, $size-land)
+  margin: 0 auto
+
+  +media($land, $scaling)
+    padding: 0 size(20, $size-land)
+    max-width: size(1200, $size-land)
+
+  +media($port, ">=tablet")
+    padding: 0 size(20, $size-port-tablet)
+    max-width: size(1200, $size-port-tablet)
+
+  +media($port, "<tablet")
+    padding: 0 size(20, $size-port)
+    max-width: size(1200, $size-port)
+
+
+
+
+
+
+
+
