@@ -1,0 +1,106 @@
+{
+  "name": "fgau",
+  "version": "1.0.22",
+  "private": true,
+  "author": "telegram: @romamas",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "deploy": "gulp deploy",
+    "fonts": "gulp fonts",
+    "iconfont": "gulp iconfont",
+    "spritePng": "gulp spritePng",
+    "spriteSvg": "gulp spriteSvg",
+    "version": "standard-version --skip.changelog",
+    "webp": "gulp webp"
+  },
+  "dependencies": {
+    "@clampy-js/vue-clampy": "^1.0.6",
+    "axios": "^0.20.0",
+    "core-js": "^3.6.5",
+    "element-closest-polyfill": "^1.0.2",
+    "es6-shim": "^0.35.5",
+    "gulp-webp": "^4.0.1",
+    "install": "^0.13.0",
+    "intersection-observer": "^0.11.0",
+    "js-cookie": "^2.2.1",
+    "lodash": "^4.17.20",
+    "normalize.css": "^8.0.1",
+    "qs": "^6.9.4",
+    "svg4everybody": "^2.1.9",
+    "swiper": "^6.3.5",
+    "typograf": "^6.11.1",
+    "v-click-outside": "^3.1.2",
+    "v-lazy-image": "^1.4.0",
+    "vue": "^2.6.12",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-meta": "^2.4.0",
+    "vue-ripple-directive": "^2.0.1",
+    "vue-router": "^3.4.3",
+    "vue-scroll-reveal": "^1.0.11",
+    "vue-the-mask": "^0.11.1",
+    "vue2-datepicker": "^3.8.0",
+    "vuelidate": "^0.7.5",
+    "vuex": "^3.5.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.4",
+    "@vue/cli-plugin-eslint": "~4.5.4",
+    "@vue/cli-service": "~4.5.4",
+    "@vue/eslint-config-airbnb": "^5.1.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.8.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "fs": "0.0.2",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-fontgen": "^0.2.5",
+    "gulp-iconfont": "^10.0.3",
+    "gulp-iconfont-css": "^3.0.0",
+    "gulp-load-plugins": "^2.0.4",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-shell": "^0.8.0",
+    "gulp-ssh": "^0.7.0",
+    "gulp-svgstore": "^7.0.1",
+    "gulp.spritesmith": "^6.11.0",
+    "moment": "^2.27.0",
+    "node-sass": "^4.14.1",
+    "prerender-spa-plugin": "^3.4.0",
+    "sass-loader": "^10.0.1",
+    "standard-version": "^9.0.0",
+    "vue-cli-plugin-pug": "^1.0.7",
+    "vue-template-compiler": "^2.6.12",
+    "webpack-modernizr-loader": "^5.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "rules": {
+      "max-len": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
